@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Farm Management</title>
+
+    <!--[if lt IE 10]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="Resources/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Resources/vendor/waves/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/feather/feather.css">
+    <link href="Resources/vendor/simple-notify/dist/simple-notify.min.css" rel="stylesheet" />
+
+    <link href="Resources/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Resources/vendor/pace-progress/themes/blue/pace-theme-dynamic365.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+    <link href="Resources/css/site.css" rel="stylesheet" />
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme2">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo" logo-theme="theme2">
+                        <a href="home.html">
+                            <img class="img-fluid" src="Resources/img/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+
+                            <li><a id="controlpagetitle" class="text-primary">All cow information</a></li>
+                        </ul>
+                        <ul class="nav-right">
+
+                            <li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <img src="Resources/img/person.png" class="img-radius" alt="User-Profile-Image">
+                                        <span>Administrator</span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <a href="#!">
+                                                <i class="feather icon-settings"></i> Settings
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="feather icon-user"></i> Profile
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <form id="frmsignoutsystem" class="form-inline">
+
+                                                <a style="background-color: transparent; border: none;padding:0px;" href="index.html"><i class="feather icon-log-out text-danger"></i>Log out</a>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="nav-list">
+                            <div class="pcoded-inner-navbar main-menu">
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="newrecord.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-plus"></i></span>
+                                            <span class="pcoded-mtext">Add new cow</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="records.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                                            <span class="pcoded-mtext">All cow information</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-flag"></i></span>
+                                            <span class="pcoded-mtext">Dasboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
+                                            <span class="pcoded-mtext">Administrator</span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            <li class="">
+                                                <a href="usermanage.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                                    <span class="pcoded-mtext">Manage users</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper" id="maindivcontent">
+                                    <div class="page-body subcontainerlayout">
+                                        <!-- Content go here -->
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables/dataTables.bootstrap4.min.css">
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables-buttons/buttons.dataTables.min.css">
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables/responsive.bootstrap4.min.css">
+
+                                        <nav class="navbar navbar-expand-lg pcodeddd-navbar is-hover">
+                                            <div class="container-fluid">
+                                                <a class="navbar-btn-back" href="records.html"><i class="feather icon-chevron-left"></i>Back</a>
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                                                    <span class="feather icon-chevrons-down"></span>
+                                                </button>
+                                                <div class="collapse navbar-collapse" id="main_nav">
+
+                                                    <ul class="navbar-nav">
+                                                        <!-- <li class="nav-item dropdown">
+                                                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-print"></i> Print</a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="/QBOReport/InvoiceFormFile?InvoiceId=@ViewModel.Customer.Id&qbocmp=@Html.GetQBOCompanyHttpRequest()"  target="_blank">Invoice form</a></li>
+                                                            </ul>
+                                                        </li> -->
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </nav>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Edit information</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group row form-group-sm">
+                                                                    <label class="col-sm-5">Come from: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Name i7: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="Ms i7 001/21 DB" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Original name: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Variety: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="Brahman" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Birth date: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="date" class="form-control form-control-sm" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Birth time: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="time" class="form-control form-control-sm" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Age (month): </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="number" class="form-control form-control-sm" value="6" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Weigth (Kg): </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="number" class="form-control form-control-sm" step="0.1" value="200" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group row form-group-sm">
+                                                                    <label class="col-sm-5">ID: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="1/8 16" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Sex: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <select class="form-control">
+                                                                            <option>All</option>
+                                                                            <option selected>Male</option>
+                                                                            <option>Female</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <label class="col-sm-5">Color: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <select class="form-control">
+                                                                            <option selected>Red</option>
+                                                                            <option>Gray</option>
+                                                                            <option>Black</option>
+                                                                            <option>White</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <label class="col-sm-5">Country: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <select class="form-control">
+                                                                            <option>All</option>
+                                                                            <option selected>USA</option>
+                                                                            <option>Khmer</option>
+                                                                            <option>Thailand</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <label class="col-sm-5">Father name: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Mother name: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">ABBA: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group row form-group-sm">
+                                                                    <label class="col-sm-5">Location: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <select class="form-control">
+                                                                            <option>All</option>
+                                                                            <option selected>Building A1</option>
+                                                                            <option>Building A2</option>
+                                                                            <option>Building B1</option>
+                                                                            <option>Building B2</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <label class="col-sm-5">State: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="Brahman_USA-F" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Note 1: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="ញីរស់" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Note 2: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Note 3: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Expected sales date: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="date" class="form-control form-control-sm" />
+                                                                    </div>
+                                                                    <label class="col-sm-5">Original owner: </label>
+                                                                    <div class="col-sm-7">
+                                                                        <input type="text" class="form-control form-control-sm" value="..." />
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group row form-group-sm">
+                                                                    <label class="col-sm-2" style="display: inline">Photo: </label>
+
+                                                                    <div class="col-sm-7">
+                                                                        <img src="Resources/img/cow1.jpg" style="width: 101%;border: 1px rgba(0, 0, 0, 0.226) solid;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <button type="button" class="btn btn-primary" onclick="AlertMessage('success', 'Information', 'Saving completed');">Save</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="styleSelector">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start Show Session Expire Warning Popup here -->
+    <div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999 !important">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-borderless">
+                <div class="modal-header">
+                    <h4 class="modal-title">Session warning</h4>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size:20px">Are you still here?</span>
+                    <br />
+                    <span style="font-size:20px">If not, we'll close this session in: <span style="font-size:1.1em" id="seconds-timer"></span></span>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnSessionOk" type="button" class="btn btn-primary" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px;">Yes</button>
+
+                    <button id="btnLogoutNow" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px;">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Show Session Expire Warning Popup here -->
+    <!--Start Show Session Expire Popup here -->
+    <div class="modal fade" id="session-expired-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999 !important">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-borderless">
+                <div class="modal-header">
+                    <h4 class="modal-title">Session ended</h4>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size:20px">There was no activity for a while so we closed the session.</span>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnExpiredOk" type="button" class="btn btn-primary" data-dismiss="modal" style="padding: 6px 12px; margin-bottom: 0; font-size: 1.1em; font-weight: normal;">Start new session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mega-menu-spinner" style="display:none">
+        <img src="Resources/img/loading.gif" />
+    </div>
+
+
+
+    <script type="text/javascript" src="Resources/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/popper/popper.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <script src="Resources/vendor/waves/waves.min.js"></script>
+    <script src="Resources/vendor/moment/moment.min.js"></script>
+    <script src="Resources/vendor/tableresizableColumns/js/resizableColumns.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/jquery.slimscroll/jquery.slimscroll.js"></script>
+    <script src="Resources/vendor/simple-notify/dist/simple-notify.min.js"></script>
+    <script src="Resources/js/pcoded.min.js"></script>
+
+    <script src="Resources/js/menu-compact.js"></script>
+    <script type="text/javascript" src="Resources/js/script.min.js"></script>
+    <script src="Resources/vendor/session-timeout/dpg-session-timeout.js"></script>
+    <script src="Resources/vendor/pace-progress/pace.js"></script>
+    <script src="Resources/js/qboi_core.js"></script>
+    <script src="Resources/js/site.js"></script>
+
+    <!-- This will init session -->
+    <script src="Resources/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/dataTables.buttons.min.js"></script>
+    <script src="Resources/vendor/jszip/jszip.min.js"></script>
+    <script src="Resources/vendor/pdfmake/pdfmake.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/buttons.print.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/buttons.html5.min.js"></script>
+    <script src="Resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="Resources/vendor/datatables/dataTables.responsive.min.js"></script>
+    <script src="Resources/vendor/datatables/responsive.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(document).on("change", "#txtupload", function() {
+                PreviewImage(this, $("#reviewphoto"));
+            });
+
+            $("#tbData").DataTable({
+                "searching": false,
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                dom: 'Bfrtip',
+                language: {
+                    searchPlaceholder: "Search records",
+                    search: "",
+                },
+                "bPaginate": true,
+                "bInfo": false,
+                fixedHeader: true,
+                "buttons": ["copy", "excel"],
+                "ordering": true,
+                /*"aaSorting": [[0, 'desc']]*/
+            }).buttons().container().appendTo('#tbData_wrapper .col-md-6:eq(0)');
+
+        });
+
+        function detailinfo() {
+            $("#detailinfomodel").modal("show");
+        }
+
+        function editinfo() {
+
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            // initSessionMonitor();
+            $('table').each(function() {
+                $(this).resizableColumns();
+                $(this).addClass("resizable");
+            });
+            $(document).ajaxStart(function() {
+
+                    Pace.restart();
+                })
+                // $("form").submit(function() {
+                //     $(".mega-menu-spinner").addClass("show");
+                // });
+
+            $('body').on('click', '.mega-menu-item-clickable', function() {
+                $(".mega-menu-spinner").addClass("show");
+
+            });
+            $('table.selectable tbody').on('click', 'tr', function() {
+                $("table.selectable tbody tr.selected").removeClass('selected');
+                $(this).addClass('selected');
+            });
+            $(document).on("click", ".keyid", function() {
+                var url = $(this).data("url");
+                GlobalLoadSubContainMenu(url);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).on('click', '.dropdown-menu', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

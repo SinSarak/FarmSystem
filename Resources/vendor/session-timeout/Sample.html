@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<h4>Please wait for <span id="count"></span> seconds to view session timeout popup.</h4>
+
+
+ <!--Start Show Session Expire Warning Popup here -->
+    <div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">                  
+                    <h4 class="modal-title">Session Expire Warning</h4>
+                </div>
+                <div class="modal-body">
+                    Your session will expire in <span id="seconds-timer"></span> seconds. Do you want to extend the session?
+                </div>
+                <div class="modal-footer">
+                    <button id="btnOk" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px;  background-color: #428bca; color: #FFF;">Ok</button>
+                    <button id="btnSessionExpiredCancelled" type="button" class="btn btn-default" data-dismiss="modal" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px; background-color: #428bca; color: #FFF;">Cancel</button>
+                    <button id="btnLogoutNow" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px;  background-color: #428bca; color: #FFF;">Logout now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Show Session Expire Warning Popup here -->
+    <!--Start Show Session Expire Popup here -->
+    <div class="modal fade" id="session-expired-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Session Expired</h4>
+                </div>
+                <div class="modal-body">
+                    Your session is expired.
+                </div>
+                <div class="modal-footer">
+                    <button id="btnExpiredOk" onclick="sessionExpiredRedirect()" type="button" class="btn btn-primary" data-dismiss="modal" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px; background-color: #428bca; color: #FFF;">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="sessionTimeout.js"></script>
+	 <!-- This will init session -->
+	<script>
+	 initSessionMonitor();
+	</script>
+	
+	 <!-- This script is only for show cound down timer on HTML Page -->
+<script type="text/javascript">
+
+window.onload = function(){
+
+(function(){
+  var counter = 60;
+
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      span.innerHTML = counter;
+    }    
+    if (counter === 0) {      
+        clearInterval(counter);
+    }
+
+  }, 1000);
+
+})();
+
+}
+
+</script>
+

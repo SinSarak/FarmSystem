@@ -1,0 +1,85 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Resizable Table Columns Demo </title>
+    <!-- jQuery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!-- The plugin jQuery.resizableColumns -->
+    <script src="js/resizableColumns.min.js"></script>
+    <!-- Some styles for Table-->
+    <link rel="stylesheet" href="css/style.css" />
+	<style>
+	body{
+	 margin: 20px auto;
+	 }
+	h1, p{
+	 text-align: center;
+	 }
+	 h1{
+	 margin-top: 20px;
+	 }
+    .section{
+	  padding: 20px;
+	 }
+	 .resizable{
+	 use-select: none;
+	 -webkit-user-select: none;
+	  }
+    
+	</style>
+	
+	
+    <script>
+      $(document).ready(function() {
+         $('table.resizable').resizableColumns();
+      });
+    </script>
+  </head>
+  <body>
+<h1> jQuery Resizable Table Columns Demo </h1>
+<p> Resize the tbale columns from head of the table... </p>
+          <div class="col-6">
+            <div class="section">
+              <table class="resizable">
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Sem1</th>
+                    <th>Sem2</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <td>Total</td>
+                    <td class="right">1243</td>
+                    <td class="right">1143</td>
+                    <td class="right">2386</td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Physics-1</td>
+                    <td class="right">67</td>
+                    <td class="right">78</td>
+                    <td class="right">145</td>
+                  </tr>
+                  <tr>
+                    <td>Engoneering Physics</td>
+                    <td class="right">76</td>
+                    <td class="right">56</td>
+                    <td class="right">132</td>
+                  </tr>
+                        <tr>
+                    <td>Engineering Mathematics</td>
+                    <td class="right">76</td>
+                    <td class="right">56</td>
+                    <td class="right">132</td>
+                  </tr>
+				  
+                </tbody>
+              </table>
+            </div>
+			</div>
+  </body>
+</html>

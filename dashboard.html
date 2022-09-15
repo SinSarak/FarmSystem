@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Farm Management</title>
+
+    <!--[if lt IE 10]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" href="Resources/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Resources/vendor/waves/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/feather/feather.css">
+    <link href="Resources/vendor/simple-notify/dist/simple-notify.min.css" rel="stylesheet" />
+
+    <link href="Resources/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Resources/vendor/pace-progress/themes/blue/pace-theme-dynamic365.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+    <link href="Resources/css/site.css" rel="stylesheet" />
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme2">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo" logo-theme="theme2">
+                        <a href="home.html">
+                            <img class="img-fluid" src="Resources/img/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+
+                            <li><a id="controlpagetitle" class="text-primary">Dashboard</a></li>
+                        </ul>
+                        <ul class="nav-right">
+
+                            <li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <img src="Resources/img/person.png" class="img-radius" alt="User-Profile-Image">
+                                        <span>Administrator</span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <a href="#!">
+                                                <i class="feather icon-settings"></i> Settings
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="feather icon-user"></i> Profile
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <form id="frmsignoutsystem" class="form-inline">
+
+                                                <a style="background-color: transparent; border: none;padding:0px;" href="index.html"><i class="feather icon-log-out text-danger"></i>Log out</a>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="nav-list">
+                            <div class="pcoded-inner-navbar main-menu">
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="newrecord.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-plus"></i></span>
+                                            <span class="pcoded-mtext">Add new cow</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="records.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                                            <span class="pcoded-mtext">All cow information</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboard.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                            <span class="pcoded-micon"><i class="feather icon-flag"></i></span>
+                                            <span class="pcoded-mtext">Dasboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
+                                            <span class="pcoded-mtext">Administrator</span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            <li class="">
+                                                <a href="usermanage.html" class="waves-effect waves-dark mega-menu-item-clickable">
+                                                    <span class="pcoded-mtext">Manage users</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper" id="maindivcontent">
+                                    <div class="page-body subcontainerlayout">
+                                        <!-- Content go here -->
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables/dataTables.bootstrap4.min.css">
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables-buttons/buttons.dataTables.min.css">
+                                        <link rel="stylesheet" type="text/css" href="Resources/vendor/datatables/responsive.bootstrap4.min.css">
+
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="card product-progress-card">
+                                                    <div class="card-block">
+                                                        <div class="row pp-main">
+                                                            <div class="col-xl-3 col-md-6">
+                                                                <div class="pp-cont">
+                                                                    <div class="row align-items-center m-b-20">
+                                                                        <div class="col-auto">
+                                                                            <i class="feather icon-box f-24 text-mute"></i>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <h2 class="m-b-0 text-c-blue">96</h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center m-b-15">
+                                                                        <div class="col-auto">
+                                                                            <p class="m-b-0">Today In</p>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <p class="m-b-0 text-c-blue"><i class="fas fa-long-arrow-alt-up m-r-10"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-c-blue" style="width:45%"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-md-6">
+                                                                <div class="pp-cont">
+                                                                    <div class="row align-items-center m-b-20">
+                                                                        <div class="col-auto">
+                                                                            <i class="feather icon-box f-24 text-mute"></i>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <h2 class="m-b-0 text-c-red">128</h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center m-b-15">
+                                                                        <div class="col-auto">
+                                                                            <p class="m-b-0">Total Male Cow</p>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <p class="m-b-0 text-c-red"><i class="fas fa-long-arrow-alt-down m-r-10"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-c-red" style="width:75%"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-md-6">
+                                                                <div class="pp-cont">
+                                                                    <div class="row align-items-center m-b-20">
+                                                                        <div class="col-auto">
+                                                                            <i class="feather icon-box f-24 text-mute"></i>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <h2 class="m-b-0 text-c-yellow">128</h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center m-b-15">
+                                                                        <div class="col-auto">
+                                                                            <p class="m-b-0">Total Female Cow</p>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <p class="m-b-0 text-c-yellow"><i class="fas fa-long-arrow-alt-up m-r-10"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-c-yellow" style="width:65%"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-md-6">
+                                                                <div class="pp-cont">
+                                                                    <div class="row align-items-center m-b-20">
+                                                                        <div class="col-auto">
+                                                                            <i class="feather icon-box f-24 text-mute"></i>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <h2 class="m-b-0 text-c-green">256</h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center m-b-15">
+                                                                        <div class="col-auto">
+                                                                            <p class="m-b-0">Total</p>
+                                                                        </div>
+                                                                        <div class="col text-right">
+                                                                            <p class="m-b-0 text-c-green"><i class="fas fa-long-arrow-alt-up m-r-10"></i></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-c-green" style="width:35%"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Sex</h5>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <canvas id="figure1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Country</h5>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <canvas id="figure2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Variety</h5>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <canvas id="figure3" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Variety rate</h5>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <canvas id="figure4" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Expected sales this month</h5>
+                                                    </div>
+                                                    <div class="card-block p-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <table class="table table-striped table-xs selectable" id="tbData">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>ID</th>
+                                                                            <th>Name i7</th>
+                                                                            <th>Sex</th>
+                                                                            <th>Color</th>
+                                                                            <th>Country</th>
+                                                                            <th>Location</th>
+                                                                            <th>Note 1</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1/8 16</td>
+                                                                            <td>Ms i7 001/21 DB</td>
+                                                                            <td>Female</td>
+                                                                            <td>Red</td>
+                                                                            <td>USA</td>
+                                                                            <td>អគារA2 (ខាងកើតofficeឆ្លាម_A1)</td>
+                                                                            <td>ញីរស់</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="styleSelector">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start Show Session Expire Warning Popup here -->
+    <div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999 !important">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-borderless">
+                <div class="modal-header">
+                    <h4 class="modal-title">Session warning</h4>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size:20px">Are you still here?</span>
+                    <br />
+                    <span style="font-size:20px">If not, we'll close this session in: <span style="font-size:1.1em" id="seconds-timer"></span></span>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnSessionOk" type="button" class="btn btn-primary" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px;">Yes</button>
+
+                    <button id="btnLogoutNow" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px;">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Show Session Expire Warning Popup here -->
+    <!--Start Show Session Expire Popup here -->
+    <div class="modal fade" id="session-expired-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999 !important">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-borderless">
+                <div class="modal-header">
+                    <h4 class="modal-title">Session ended</h4>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size:20px">There was no activity for a while so we closed the session.</span>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnExpiredOk" type="button" class="btn btn-primary" data-dismiss="modal" style="padding: 6px 12px; margin-bottom: 0; font-size: 1.1em; font-weight: normal;">Start new session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mega-menu-spinner" style="display:none">
+        <img src="Resources/img/loading.gif" />
+    </div>
+
+
+
+    <script type="text/javascript" src="Resources/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/popper/popper.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <script src="Resources/vendor/waves/waves.min.js"></script>
+    <script src="Resources/vendor/moment/moment.min.js"></script>
+    <script src="Resources/vendor/tableresizableColumns/js/resizableColumns.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/jquery.slimscroll/jquery.slimscroll.js"></script>
+    <script src="Resources/vendor/simple-notify/dist/simple-notify.min.js"></script>
+    <script src="Resources/js/pcoded.min.js"></script>
+
+    <script src="Resources/js/menu-compact.js"></script>
+    <script type="text/javascript" src="Resources/js/script.min.js"></script>
+    <script src="Resources/vendor/session-timeout/dpg-session-timeout.js"></script>
+    <script src="Resources/vendor/pace-progress/pace.js"></script>
+    <script src="Resources/js/qboi_core.js"></script>
+    <script src="Resources/js/site.js"></script>
+
+    <!-- This will init session -->
+    <script src="Resources/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/dataTables.buttons.min.js"></script>
+    <script src="Resources/vendor/jszip/jszip.min.js"></script>
+    <script src="Resources/vendor/pdfmake/pdfmake.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/buttons.print.min.js"></script>
+    <script src="Resources/vendor/datatables-buttons/buttons.html5.min.js"></script>
+    <script src="Resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="Resources/vendor/datatables/dataTables.responsive.min.js"></script>
+    <script src="Resources/vendor/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="Resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="Resources/vendor/chart.js/chartjs-plugin-datalabels.min.js"></script>
+    <script src="Resources/vendor/numberformat/format.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/cambodiaLow.js"></script>
+    <script>
+        runFigure1();
+        runFigure2();
+        runFigure3();
+        runFigure4();
+
+        function runFigure1() {
+            var chartDailyInvoiceCanvas = $('#figure1').get(0).getContext('2d');
+            var chartDailyInvoiceData = {
+                labels: ["Male", "Female"],
+                datasets: [{
+                    data: [128, 128],
+                    backgroundColor: ["rgb(5, 155, 255)", "rgb(255, 64, 105)"],
+                }]
+            }
+            var chartDailyInvoiceOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "right",
+                        display: true
+                    },
+                    datalabels: {
+                        formatter: (value, ctx) => {
+
+                            let sum = 0;
+                            let dataArr = ctx.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = format("#,##0.##", value) + " (" + (value * 100 / sum).toFixed(2) + "%)";
+                            return percentage;
+                        },
+                        color: '#000',
+                        borderRadius: 3,
+                        padding: {
+                            left: 5,
+                            top: 3,
+                            right: 5,
+                            bottom: 3,
+                        },
+                        backgroundColor: "rgba(255, 255, 255, 0.7)",
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+            var chartDailyInvoiceVar = new Chart(chartDailyInvoiceCanvas, {
+                type: 'doughnut',
+                data: chartDailyInvoiceData,
+                options: chartDailyInvoiceOptions,
+                plugins: [ChartDataLabels],
+            });
+        }
+
+        function runFigure2() {
+            var chartDailyInvoiceCanvas = $('#figure2').get(0).getContext('2d');
+            var chartDailyInvoiceData = {
+                labels: ["USA", "Cambodia", "Thailand"],
+                datasets: [{
+                    data: [111, 222, 333],
+                    backgroundColor: ["rgb(34, 207, 207)", "rgb(255, 144, 32)", "rgb(5, 155, 255)"],
+                }]
+            }
+            var chartDailyInvoiceOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "right",
+                        display: true
+                    },
+                    datalabels: {
+                        formatter: (value, ctx) => {
+
+                            let sum = 0;
+                            let dataArr = ctx.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = format("#,##0.##", value) + " (" + (value * 100 / sum).toFixed(2) + "%)";
+                            return percentage;
+                        },
+                        color: '#000',
+                        borderRadius: 3,
+                        padding: {
+                            left: 5,
+                            top: 3,
+                            right: 5,
+                            bottom: 3,
+                        },
+                        backgroundColor: "rgba(255, 255, 255, 0.7)",
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+            var chartDailyInvoiceVar = new Chart(chartDailyInvoiceCanvas, {
+                type: 'doughnut',
+                data: chartDailyInvoiceData,
+                options: chartDailyInvoiceOptions,
+                plugins: [ChartDataLabels],
+            });
+        }
+
+        function runFigure3() {
+
+            var chartDailyInvoiceData = {
+                labels: ["Milking Devon", "Brahman", "Brangus", "Lowline", "Bretonne Pie Noir"],
+                datasets: [{
+                    label: 'Variety',
+                    data: [11, 22, 33, 44, 55],
+                    backgroundColor: ["rgb(34, 207, 207)", "rgb(255, 144, 32)", "rgb(5, 155, 255)", "rgb(106, 26, 76)", "rgb(219, 105, 165)"],
+                }]
+            }
+            var chartmonthlyInvoiceReturnedCanvas = $('#figure3').get(0).getContext('2d');
+
+            var chartMonthlyInvoiceReturnedVar = new Chart(chartmonthlyInvoiceReturnedCanvas, {
+                type: 'bar',
+                data: chartDailyInvoiceData,
+                options: {
+
+                    animation: {
+                        duration: 10,
+                    },
+                    tooltips: {
+                        mode: 'label',
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            },
+                            stacked: true,
+                            //ticks: {
+                            //    callback: function (value) { return numberWithCommas(value); },
+                            //},
+                        },
+                        x: {
+                            stacked: true,
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }, // scales
+                    plugins: {
+                        legend: {
+                            position: "right",
+                            display: true
+                        },
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                if (value == 0) {
+                                    return null;
+                                } else {
+                                    return format("#,##0.##", value);
+                                }
+                            },
+                            color: '#000',
+                            borderRadius: 3,
+                            padding: {
+                                left: 5,
+                                top: 3,
+                                right: 5,
+                                bottom: 3,
+                            },
+                            backgroundColor: "rgba(255, 255, 255, 0.7)",
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                },
+                plugins: [ChartDataLabels],
+            });
+        }
+
+        function runFigure4() {
+
+            var barChartDeliveryCanvas = $('#figure4').get(0).getContext('2d')
+            var linChartAvgDeliveryOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false,
+                tooltips: {
+                    intersect: true,
+                    position: 'nearest',
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    datalabels: {
+                        backgroundColor: function(context) {
+                            return context.dataset.backgroundColor;
+                        },
+                        borderRadius: 4,
+                        color: '#000',
+                        borderRadius: 3,
+                        backgroundColor: "rgba(255, 255, 255, 1)",
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: Math.round
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            };
+            chartAvgTimeDeliveryVar = new Chart(barChartDeliveryCanvas, {
+                type: 'line',
+                data: {
+                    labels: ["Milking Devon", "Brahman", "Brangus", "Lowline", "Bretonne Pie Noir"],
+                    datasets: [{
+                        label: 'Average Time of Delivery',
+                        data: [11, 33, 22, 55, 44],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0,
+
+                    }]
+                },
+                options: linChartAvgDeliveryOptions,
+                plugins: [ChartDataLabels],
+                onClick: function(e) {
+                    var activePoints = myChart.getElementsAtEvent(e);
+                    var selectedIndex = activePoints[0]._index;
+                    alert(this.data.datasets[0].data[selectedIndex]);
+
+                }
+            });
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tbData").DataTable({
+                "searching": false,
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                dom: 'Bfrtip',
+                language: {
+                    searchPlaceholder: "Search records",
+                    search: "",
+                },
+                "bPaginate": true,
+                "bInfo": false,
+                fixedHeader: true,
+                "buttons": [],
+                "ordering": true,
+                /*"aaSorting": [[0, 'desc']]*/
+            });
+
+
+
+            // initSessionMonitor();
+            $('table').each(function() {
+                $(this).resizableColumns();
+                $(this).addClass("resizable");
+            });
+            $(document).ajaxStart(function() {
+
+                    Pace.restart();
+                })
+                // $("form").submit(function() {
+                //     $(".mega-menu-spinner").addClass("show");
+                // });
+
+            $('body').on('click', '.mega-menu-item-clickable', function() {
+                $(".mega-menu-spinner").addClass("show");
+
+            });
+            $('table.selectable tbody').on('click', 'tr', function() {
+                $("table.selectable tbody tr.selected").removeClass('selected');
+                $(this).addClass('selected');
+            });
+            $(document).on("click", ".keyid", function() {
+                var url = $(this).data("url");
+                GlobalLoadSubContainMenu(url);
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).on('click', '.dropdown-menu', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

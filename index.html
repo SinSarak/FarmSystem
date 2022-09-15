@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Farm Management</title>
+
+
+    <!--[if lt IE 10]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+    <link rel="icon" href="Resources/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="Resources/vendor/waves/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/feather/feather.css">
+
+
+    <link rel="stylesheet" type="text/css" href="Resources/vendor/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="Resources/css/icofont.css">
+
+    <link href="Resources/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="Resources/css/pages.css">
+</head>
+
+<body style="background-color:#109866">
+
+
+    <section class="login-block">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="md-float-material form-material" id="account">
+                        <div class="text-center">
+                            <img src="Resources/img/logo.png" alt="logo.png">
+                        </div>
+                        <div class="auth-box card">
+                            <div class="card-block">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-center txt-primary">Sign In</h3>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted text-center p-b-5">Sign in with your regular account</p>
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group form-primary">
+                                    <input type="text" asp-for="Input.Email" class="form-control" required="">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label" asp-for="Input.Email">Email</label>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input class="form-control" autocomplete="off" type="password" id="txtPasswordLogintxt" />
+                                    <input asp-for="Input.Password" class="form-control" autocomplete="off" type="hidden">
+                                    <span class="form-bar"></span>
+                                    <label class="float-label">Password</label>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="button" id="btnlogin" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mega-menu-spinner" style="display:none">
+            <img src="Resources/img/loading.gif" />
+        </div>
+    </section>
+    <script type="text/javascript" src="Resources/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/popper/popper.min.js"></script>
+    <script type="text/javascript" src="Resources/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+    <script src="Resources/vendor/waves/waves.min.js"></script>
+
+    <script type="text/javascript" src="Resources/vendor/jquery.slimscroll/jquery.slimscroll.js"></script>
+
+    <script type="text/javascript" src="Resources/vendor/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="Resources/vendor/modernizr/js/css-scrollbars.js"></script>
+    <script type="text/javascript" src="Resources/js/common-pages.js"></script>
+    <link href="Resources/css/site.css" rel="stylesheet" />
+    <!-- <script src="Resources/js/ui.jquery.js"></script> -->
+
+    <script>
+        $("#btnlogin").click(function() {
+            $(".mega-menu-spinner").addClass("show");
+            setTimeout("window.location.href = 'home.html';", 2000);
+        });
+    </script>
+</body>
+
+</html>
